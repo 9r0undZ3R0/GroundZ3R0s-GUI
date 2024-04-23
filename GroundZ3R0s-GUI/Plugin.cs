@@ -20,6 +20,11 @@ namespace GroundZ3R0s_GUI
         bool showGUI = false;
         bool spidermonkenabled = false;
         bool flyenabled = false;
+        bool settings = false;
+        bool moddedmods = false;
+        public static Rect menuSize = new Rect(50f, 100f, 500f, 500f);
+        string openorclose = "Open";
+        string openorclosemodded = "Open";
         GameObject tpc;
 
         void Start()
@@ -54,7 +59,10 @@ namespace GroundZ3R0s_GUI
 
         void OnGUI()
         {
-            bool TOGGLEBUTTON = GUI.Button(new Rect(20f, 20f, 140f, 40f), "Toggle GUI");
+            GUI.backgroundColor = Color.magenta;
+            GUI.color = Color.magenta;
+
+            bool TOGGLEBUTTON = GUI.Button(new Rect(20f, 20f, 130f, 40f), "Toggle GUI");
 
             if (TOGGLEBUTTON)
             {
@@ -63,34 +71,53 @@ namespace GroundZ3R0s_GUI
 
             if (showGUI)
             {
-                GUI.contentColor = Color.magenta;
-                GUI.Box(new Rect(20f, 100f, 450f, 450f), "GroundZ3R0's GUI");
+                GUI.Box(menuSize, "GroundZ3R0's GUI");
+                bool OPENSETTINGS = GUI.Button(new Rect(60f, 140f, 130f, 40f), $"{openorclose} Settings");
+                bool OPENMODDEDMODS = GUI.Button(new Rect(60f, 200f, 130f, 40f), $"{openorclosemodded} Modded Mods");
 
-                bool FPC = GUI.Button(new Rect(40f, 140f, 140f, 40f), "Toggle FPC");
-                bool SPIDERMONK = GUI.Button(new Rect(40f, 200f, 140f, 40f), "Toggle Spider Monk (BUGGY, MODDED)");
-                GUI.Label(new Rect(240f, 200f, 140f, 40f), $"Spider Monk On: {spidermonkenabled}");
-                bool FLY = GUI.Button(new Rect(40f, 260f, 140f, 40f), "Toggle Fly (MODDED)");
-                GUI.Label(new Rect(280f, 260f, 140f, 40f), $"Fly On: {flyenabled}");
-
-                if (FPC)
+                if (OPENSETTINGS && !moddedmods)
                 {
-                    if (tpc != null)
+                    settings = !settings;
+                }
+                if (OPENMODDEDMODS && !settings)
+                {
+                    moddedmods = !moddedmods;
+                }
+
+                if (settings && !moddedmods)
+                {
+                    GUI.Box(new Rect(650f, 100f, 500f, 500f), "Settings");
+                    bool FPC = GUI.Button(new Rect(700f, 140f, 140f, 40f), "Toggle FPC");
+
+                    if (FPC)
                     {
-                        tpc.SetActive(!tpc.activeSelf);
+                        if (tpc != null)
+                        {
+                            tpc.SetActive(!tpc.activeSelf);
+                        }
                     }
                 }
-                if (SPIDERMONK)
+                if (moddedmods && !settings)
                 {
-                    if (inRoom)
+                    GUI.Box(new Rect(650f, 100f, 500f, 500f), "Modded Mods");
+                    bool SPIDERMONK = GUI.Button(new Rect(700f, 140f, 140f, 60f), "Toggle Spider Monk\n(BUGGY, MODDED)");
+                    GUI.Label(new Rect(850f, 140f, 140f, 40f), $"Spider Monk On: {spidermonkenabled}");
+                    bool FLY = GUI.Button(new Rect(700f, 210f, 140f, 40f), "Toggle Fly (MODDED)");
+                    GUI.Label(new Rect(850f, 210f, 140f, 40f), $"Fly On: {flyenabled}");
+
+                    if (SPIDERMONK)
                     {
-                        spidermonkenabled = !spidermonkenabled;
+                        if (inRoom)
+                        {
+                            spidermonkenabled = !spidermonkenabled;
+                        }
                     }
-                }
-                if (FLY)
-                {
-                    if (inRoom)
+                    if (FLY)
                     {
-                        flyenabled = !flyenabled;
+                        if (inRoom)
+                        {
+                            flyenabled = !flyenabled;
+                        }
                     }
                 }
             }
@@ -145,13 +172,31 @@ namespace GroundZ3R0s_GUI
 
         void Update()
         {
-            if (spidermonkenabled)
+            if (spidermonkenabled && inRoom)
             {
                 SpiderMonkMod();
             }
-            if (flyenabled)
+            if (flyenabled && inRoom)
             {
                 FlyMod();
+            }
+
+            if (settings)
+            {
+                openorclose = "Close";
+            }
+            else if (!settings)
+            {
+                openorclose = "Open";
+            }
+
+            if (moddedmods)
+            {
+                openorclosemodded = "Close";
+            }
+            else if (!moddedmods)
+            {
+                openorclosemodded = "Open";
             }
         }
 
