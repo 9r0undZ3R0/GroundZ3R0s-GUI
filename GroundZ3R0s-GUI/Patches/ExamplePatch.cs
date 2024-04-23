@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Gorilla_Tag_GUI_Mod.Patches
+namespace GroundZ3R0s_GUI.Patches
 {
     /// <summary>
     /// This is an example patch, made to demonstrate how to use Harmony. You should remove it if it is not used.

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34322.80
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gorilla Tag GUI Mod", "Gorilla Tag GUI Mod\Gorilla Tag GUI Mod.csproj", "{037D88D1-C894-4D07-9C0F-B614219D1280}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GroundZ3R0s-GUI", "GroundZ3R0s-GUI\GroundZ3R0s-GUI.csproj", "{39EFBD25-884A-4334-80CA-401536686665}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{037D88D1-C894-4D07-9C0F-B614219D1280}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{037D88D1-C894-4D07-9C0F-B614219D1280}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{037D88D1-C894-4D07-9C0F-B614219D1280}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{037D88D1-C894-4D07-9C0F-B614219D1280}.Release|Any CPU.Build.0 = Release|Any CPU
+		{39EFBD25-884A-4334-80CA-401536686665}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39EFBD25-884A-4334-80CA-401536686665}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39EFBD25-884A-4334-80CA-401536686665}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39EFBD25-884A-4334-80CA-401536686665}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {6B36ABAB-EF63-474D-971D-A27F1E13726D}
+		SolutionGuid = {1B17551A-5E54-428C-A4B5-968399435F96}
 	EndGlobalSection
 EndGlobal

@@ -2,7 +2,7 @@
 using System;
 using System.Reflection;
 
-namespace Gorilla_Tag_GUI_Mod
+namespace GroundZ3R0s_GUI
 {
     /// <summary>
     /// This class handles applying harmony patches to the game.
